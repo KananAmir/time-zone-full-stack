@@ -1,0 +1,48 @@
+#home-page {
+  .home-page {
+    #banner {
+      background-image: url("https://preview.colorlib.com/theme/timezone/assets/img/hero/watch.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: right center;
+      padding: 13rem 0;
+
+      .banner {
+        .content {
+          max-width: 700px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2rem;
+
+          h1 {
+            font-size: 96px;
+            font-weight: bold;
+          }
+          p {
+            font-size: 17px;
+          }
+          .show {
+            padding: 10px 20px;
+            background-color: #212025;
+            color: #fff;
+            border: none;
+          }
+        }
+      }
+    }
+    #popular-items {
+      padding: 13rem 0;
+      .popular-items {
+        h2 {
+          text-align: center;
+          font-size: 2rem;
+        }
+        p {
+          text-align: center;
+          margin: 2rem;
+        }
+      }
+    }
+  }
+}
