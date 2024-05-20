@@ -18,3 +18,21 @@ export async function getDataById(id) {
     console.log(error);
   }
 }
+
+export async function addNewData(payload) {
+  try {
+    const response = axios.post(`${BASE_URL}/watchs`, payload);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+export async function deleteDataById(id) {
+  try {
+    const response = axios.delete(`${BASE_URL}/watchs/${id}`);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
