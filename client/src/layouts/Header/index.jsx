@@ -1,10 +1,16 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./index.scss";
 import { CiUser } from "react-icons/ci";
 import { CiSearch } from "react-icons/ci";
 import { CiShoppingCart } from "react-icons/ci";
+import { CiHeart } from "react-icons/ci";
+import { useContext } from "react";
+import FavoritesContext from "../../context/favoritesCotext";
+import BasketContext from "../../context/basketContext";
 
 const Header = () => {
+  const { favs } = useContext(FavoritesContext);
+  const { basket } = useContext(BasketContext);
   return (
     <header>
       <div className="container">
@@ -17,7 +23,7 @@ const Header = () => {
           <nav>
             <ul>
               <li>
-                <NavLink>Home</NavLink>
+                <NavLink to={"/"}>Home</NavLink>
               </li>
               <li>
                 <NavLink>Shop</NavLink>
@@ -41,8 +47,13 @@ const Header = () => {
           </nav>
           <div className="icons">
             <CiSearch />
-            <CiUser />
-            <CiShoppingCart />
+            <Link to={"/favorites"}>
+              <CiHeart /> <sup>{favs.length}</sup>
+            </Link>
+            <Link to={"/basket"}>
+              <CiShoppingCart />{" "}
+              <sup>{basket.reduce((sum, curr) => sum + curr.count, 0)}</sup>
+            </Link>
           </div>
         </div>
       </div>
